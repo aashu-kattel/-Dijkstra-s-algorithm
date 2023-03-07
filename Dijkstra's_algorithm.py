@@ -16,12 +16,12 @@ def dijkstra(graph, start):
         if current_distance > distances[current_vertex]:
             continue
 
-        # Iterate over the neighbors of the current vertex and update their distances if needed
-        for neighbor, weight in graph[current_vertex].items():
+        # Iterate over the neighbours of the current vertex and update their distances if needed
+        for neighbour, weight in graph[current_vertex].items():
             distance = current_distance + weight
 
-            if distance < distances[neighbor]:
-                distances[neighbor] = distance
-                heapq.heappush(pq, (distance, neighbor))
+            if distance < distances[neighbour]:
+                distances[neighbour] = distance
+                heapq.heappush(pq, (distance, neighbour))
 
     return distances
